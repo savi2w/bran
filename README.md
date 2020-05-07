@@ -1,6 +1,6 @@
 # Chest
 
-A automated chess player for [https://www.chess.com/](https://www.chess.com/)  
+A automatic chess player for [https://www.chess.com/](https://www.chess.com/)  
 Powered by [Komodo](https://komodochess.com/)
 
 **FOR STUDY PURPOSES ONLY**

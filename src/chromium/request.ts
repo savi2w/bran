@@ -1,6 +1,4 @@
 import bent from "bent";
-import fs from "fs-extra";
-import path from "path";
 import puppeteer from "puppeteer-core";
 
 const getSource = bent("string");
@@ -27,15 +25,6 @@ const useCustomClient = async (request: puppeteer.Request) => {
     const cli = url.split("/").pop();
     if (!cli) {
       throw new TypeError('"cli" must be a string');
-    }
-
-    const cliPath = path.join("/app", cli);
-    const cliExists = await fs.pathExists(cliPath);
-    if (cliExists) {
-      return request.respond({
-        ...defaultRespond,
-        body: await fs.readFile(cliPath),
-      });
     }
 
     const cliSource = await getSource(url);
@@ -69,13 +58,10 @@ const useCustomClient = async (request: puppeteer.Request) => {
       .split(postSource[0])
       .join(postSource[0] + useClientId);
 
-    return Promise.all([
-      request.respond({
-        ...defaultRespond,
-        body: postReplaced,
-      }),
-      fs.writeFile(cliPath, postReplaced),
-    ]);
+    return request.respond({
+      ...defaultRespond,
+      body: postReplaced,
+    });
   }
 
   return request.continue();

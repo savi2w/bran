@@ -1,2 +1,2 @@
-export { default as getNextMove } from "./next-move";
-export { default as parseHistory } from "./history";
+export { default as getNextMove } from "./get-next-move";
+export { default as parseHistory } from "./parse-history";

@@ -1,1 +1,1 @@
-export { default as startChromium } from "./chromium";
+export { default as startChromium } from "./start-chromium";

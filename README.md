@@ -1,6 +1,6 @@
 # Chest
 
-A automatic chess player for [https://www.chess.com/](https://www.chess.com/)  
+A chess player for [https://www.chess.com/](https://www.chess.com/)  
 Powered by [Rodent III](https://github.com/nescitus/Rodent_III.git/)
 
 **FOR STUDY PURPOSES ONLY**

@@ -19,7 +19,13 @@ And then execute the docker-compose
 $ docker-compose up --build
 ```
 
-## Personalities
+## Personality
+
+Chest simulates a player with 2300 ELO Rating (FIDE) playing blitz at https://www.chess.com/
+
+- Play fast during the opening phase
+- Play fast if you are in time trouble
+- Play normally in mid game
 
 ## Known Behaviors
 

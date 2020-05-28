@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer-core";
 
-import loadMiddleware from "./load";
-import requestMiddleware from "./request";
+import loadMiddleware from "./load-middleware";
+import requestMiddleware from "./request-middleware";
 
 const startChromium = async () => {
   const browser = await puppeteer.launch({

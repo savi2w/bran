@@ -1,7 +1,7 @@
 # Chest
 
 A automatic chess player for [https://www.chess.com/](https://www.chess.com/)  
-Powered by [Komodo](https://komodochess.com/)
+Powered by [Rodent III](https://github.com/nescitus/Rodent_III.git/)
 
 **FOR STUDY PURPOSES ONLY**
 
@@ -18,6 +18,8 @@ And then execute the docker-compose
 ```sh
 $ docker-compose up --build
 ```
+
+## Personalities
 
 ## Known Behaviors
 

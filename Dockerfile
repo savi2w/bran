@@ -2,15 +2,14 @@ FROM archlinux/base
 LABEL maintainer="weslenng"
 
 RUN echo 'Server = http://linorg.usp.br/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
-RUN pacman -Syu --noconfirm chromium nodejs unzip yarn wget
+RUN pacman -Syu --noconfirm chromium gcc git make nodejs yarn
 
 WORKDIR /app
 
-RUN wget https://komodochess.com/pub/komodo-10.zip
-RUN unzip komodo-10.zip
-RUN chmod +x komodo-10_ae4bdf/Linux/komodo-10-linux
+RUN git clone --depth=1 https://github.com/nescitus/Rodent_III.git
+RUN make --directory Rodent_III/sources
 
-RUN pacman -R --noconfirm unzip wget
+RUN pacman -R --noconfirm git
 
 COPY package.json ./
 COPY yarn.lock ./

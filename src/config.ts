@@ -11,10 +11,10 @@ export type Config = {
 
 const config: Config = {
   COMMON_MOVE: {
-    MAXIMUM: 12288,
+    MAXIMUM: 8192,
     MINIMUM: 4096,
   },
-  INSTANT_MOVE: 512,
+  INSTANT_MOVE: 1024,
   LOW_TIME: 32768,
   OPENING_MOVES: 16,
   PORT: 4096,

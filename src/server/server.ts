@@ -3,7 +3,7 @@ import express from "express";
 
 import moveHandler from "./move-handler";
 
-const server = () => {
+const server = (): express.Application => {
   const app = express();
 
   const origin = "https://www.chess.com";

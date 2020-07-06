@@ -70,7 +70,7 @@ const useCustomClient = async (request: puppeteer.Request) => {
   return request.continue();
 };
 
-const requestMiddleware = (request: puppeteer.Request) =>
+const requestMiddleware = (request: puppeteer.Request): Promise<void[]> =>
   Promise.all([useCustomClient(request)]);
 
 export default requestMiddleware;

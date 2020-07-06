@@ -135,7 +135,7 @@ const useLongPolling = () => {
   }, 1200);
 };
 
-const loadMiddleware = (page: puppeteer.Page) =>
+const loadMiddleware = (page: puppeteer.Page): Promise<void[]> =>
   Promise.all([
     page.evaluate(useAutoChess, config),
     page.evaluate(useLongPolling),

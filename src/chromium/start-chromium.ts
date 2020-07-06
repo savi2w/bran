@@ -3,7 +3,7 @@ import puppeteer from "puppeteer-core";
 import loadMiddleware from "./load-middleware";
 import requestMiddleware from "./request-middleware";
 
-const startChromium = async () => {
+const startChromium = async (): Promise<void> => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--start-maximized"],
     defaultViewport: null,

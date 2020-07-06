@@ -21,7 +21,10 @@ const payloadSchema = yup
   })
   .noUnknown();
 
-const moveHandler = async (request: Request, response: Response) => {
+const moveHandler = async (
+  request: Request,
+  response: Response
+): Promise<Response<unknown>> => {
   try {
     let payload;
     try {

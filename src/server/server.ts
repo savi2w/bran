@@ -1,9 +1,9 @@
 import cors from "cors";
-import express from "express";
+import express, { Application } from "express";
 
 import moveHandler from "./move-handler";
 
-const server = () => {
+const server = (): Application => {
   const app = express();
 
   const origin = "https://www.chess.com";

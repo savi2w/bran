@@ -1,13 +1,19 @@
+import { Launcher } from "chrome-launcher";
 import puppeteer from "puppeteer-core";
 
 import loadMiddleware from "./load-middleware";
 import requestMiddleware from "./request-middleware";
 
 const startChromium = async (): Promise<void> => {
+  const executablePaths = Launcher.getInstallations();
+  if (!executablePaths.length) {
+    throw new Error("Cannot find a Chromium installation");
+  }
+
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--start-maximized"],
     defaultViewport: null,
-    executablePath: "/usr/sbin/chromium",
+    executablePath: executablePaths[0],
     headless: false,
   });
 

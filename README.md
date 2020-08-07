@@ -5,19 +5,17 @@ Powered by [Rodent III](https://github.com/nescitus/Rodent_III.git/)
 
 **FOR STUDY PURPOSES ONLY**
 
+## Requirements
+
+- Chromium
+- A chess engine which support UCI protocol
+  - ([bin/rodent](bin/rodent) is a pre-built binary which works in Linux)
+
 ## Usage
 
-Disable X11 Acess Control
-
-```sh
-$ xhost +
-```
-
-And then execute the docker-compose
-
-```sh
-$ docker-compose up --build
-```
+- `yarn`
+- `yarn build`
+- `yarn start`
 
 ## Personality
 

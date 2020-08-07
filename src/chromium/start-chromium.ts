@@ -7,7 +7,7 @@ import requestMiddleware from "./request-middleware";
 const startChromium = async (): Promise<void> => {
   const executablePaths = Launcher.getInstallations();
   if (!executablePaths.length) {
-    throw new Error("Cannot find a Chromium installation");
+    throw new Error("Can't find a Chromium installation");
   }
 
   const browser = await puppeteer.launch({

@@ -1,6 +1,7 @@
 import { Engine } from "node-uci";
+import path from "path";
 
-const engine = new Engine("/app/Rodent_III/sources/rodentIII")
+const engine = new Engine(path.join(__dirname, "..", "..", "bin", "rodent"))
   .chain()
   .init()
   .setoption("PawnValue", "100")

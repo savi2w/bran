@@ -1,12 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
+/.vscode
+/build
 /node_modules
-
-.vscode
-
-yarn-debug.log*
-yarn-error.log*
-
-/dist
-/coverage
-/TODO.md

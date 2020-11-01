@@ -3,19 +3,17 @@
 Chess player for [https://www.chess.com/](https://www.chess.com/)  
 Powered by [Rodent III](https://github.com/nescitus/Rodent_III.git/)
 
-**FOR STUDY PURPOSES ONLY**
-
 ## Requirements
 
 - Chromium
 - A chess engine which support UCI protocol
-  - ([bin/rodent](bin/rodent) is a pre-built binary which works in Linux)
+  - ([bin/rodent](bin/rodent) is a pre-built binary for Linux)
 
 ## Usage
 
-- `yarn`
-- `yarn build`
-- `yarn start`
+- `npm install`
+- `npm run build`
+- `npm run start`
 
 ## Personality
 
@@ -28,3 +26,7 @@ Chest simulates a player with 2300 ELO Rating (FIDE) playing blitz at https://ww
 ## Known Behaviors
 
 - When a match starts and you're the white player, you need to do the first move manually
+
+## License
+
+This project is distributed under the [MIT license](LICENSE)

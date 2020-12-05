@@ -1,7 +1,8 @@
 import { Engine } from "node-uci";
-import path from "path";
 
-const engine = new Engine(path.join(__dirname, "..", "..", "bin", "rodent"))
+import getEnginePath from "./get-engine-path";
+
+const engine = new Engine(getEnginePath())
   .chain()
   .init()
   .setoption("PawnValue", "100")

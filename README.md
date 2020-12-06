@@ -7,7 +7,7 @@ Powered by [Rodent III](https://github.com/nescitus/Rodent_III.git/)
 
 - Chromium
 - A chess engine which support UCI protocol
-  - The [bin folder](bin) has a [`Rodent_III`](https://github.com/nescitus/Rodent_III) pre-built binary for macOS, Linux and Windows
+  - The [bin folder](bin) has a [`Rodent_III`](https://github.com/nescitus/Rodent_III) pre-built binary for [macOS](https://github.com/nescitus/Rodent_III/pull/80), Linux and Windows
 
 ## Usage
 

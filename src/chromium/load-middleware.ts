@@ -129,7 +129,7 @@ const useLongPolling = () => {
           `{"live_settings":{"animationtype":"default","autoqueen":true,"autotop":false,"board":"bases","challenge":0,"challengealert":0,"challengemaxrating":400,"challengeminrating":-400,"chatrequest":0,"config":null,"confirmresign":false,"coord":true,"darkmode":true,"evalbar":null,"evallines":true,"eventannouncement":0,"flip":false,"focusmode":false,"friendalert":0,"gamechat":0,"hl":true,"layoutconfig":null,"lowtimewarning":10,"markings":true,"movemethod":"drag","multi":false,"outsidecoord":false,"piecenotation":"text","pieces":"bases","pre":true,"quickanalysis":false,"seekbasetime":0,"seekbasetimechess":1800,"seekbasetimevariants":null,"seekcolor":0,"seekfilterhidevariants":false,"seekfiltermaxrating":400,"seekfiltermaxtime":null,"seekfilterminrating":-400,"seekfiltermintime":null,"seekfilterpremiumonly":false,"seekfilterratedonly":true,"seekgametype":"chess","seekgraph":false,"seekincrement":0,"seekincrementchess":0,"seekincrementvariants":null,"seekmaxrating":400,"seekminrating":-400,"seekrated":1,"showlegalmoves":false,"showtimestamps":true,"simultautoswitch":false,"sounds":true,"soundtheme":"default"},"timeIncrementTip":true,"tabset_collapsed":false,"dgtboard":false,"liveNetwork":"auto","liveTransport":"${liveTransport}","alertsDisabled":false}`
         );
 
-        window.location.reload(true);
+        window.location.reload();
       }
     }
   }, 1200);

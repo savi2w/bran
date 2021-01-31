@@ -3,7 +3,7 @@ import puppeteer from "puppeteer-core";
 
 const getSource = bent("string");
 
-const clientPattern = /live\.client\.[a-f0-9]{8,8}\.js/g;
+const clientPattern = /live__stable\.client\.[a-f0-9]{8}\.js/g;
 const encodePattern = /function encodeTCN\((.*?)\){(.*?)return (.*?)}/g;
 const decodePattern = /function decodeTCN\((.*?)\){(.*?)return (.*?)}/g;
 const postPattern = /function post\((.*?)\){/g;

@@ -18,6 +18,7 @@ const startChromium = async (): Promise<void> => {
   });
 
   const page = await browser.newPage();
+  
   await page.setRequestInterception(true);
 
   page.on("domcontentloaded", () => loadMiddleware(page));

@@ -58,7 +58,10 @@ const engine = new Engine(getEnginePath())
   .setoption("BookFilter", "20")
   .setoption("GuideBookFile", "ph-exoticbook.bin")
   .setoption("MainBookFile", "micro.bin");
-
+  
+/**
+ * https://github.com/ebemunk/node-uci/issues/25#issuecomment-780891301
+ */
 const getNextMove = async (
   moveTime: number,
   position: string

@@ -60,6 +60,7 @@ const engine = new Engine(getEnginePath())
   .setoption("MainBookFile", "micro.bin");
   
 /**
+ * >:(
  * https://github.com/ebemunk/node-uci/issues/25#issuecomment-780891301
  */
 const getNextMove = async (

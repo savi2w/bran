@@ -1,5 +1,9 @@
 # Bran
 
+⚠️ Deprecated
+
+***
+
 Chess player for [https://www.chess.com/](https://www.chess.com/)  
 Powered by [Rodent-IV](http://www.pkoziol.cal24.pl/rodent/rodent.htm)
 

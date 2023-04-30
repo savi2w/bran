@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "incremental": true,
+    "module": "commonjs",
+    "outDir": "build",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019",
+  },
+  "exclude": [
+    "*.spec.ts",
+    "*.test.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

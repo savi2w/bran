@@ -7,6 +7,7 @@ const gameSchema = yup
   .object()
   .required()
   .shape({
+    depth: yup.number().required(),
     fen: yup.string().required(),
   })
   .noUnknown();
@@ -24,7 +25,7 @@ export const gameHandler = async (
       return response.sendStatus(400);
     }
 
-    const move = await getNextMove(game.fen);
+    const move = await getNextMove(game.depth, game.fen);
 
     return response.json(move);
   } catch (err) {

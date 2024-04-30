@@ -1,37 +1,55 @@
 import fetch from "node-fetch";
 import { HTTPRequest } from "puppeteer-core";
 
-const clientRegExp = /https:\/\/(.*?)chess(.*?)play__beta\.client(.*?)\.js/g;
+const clientRegExp =
+  /https:\/\/(.*?)chess\.com\/chesscom-artifacts(.*?)play\.client(.*?)\.js/g;
 
 const useBoard = (playSource: string) => {
-  const funRegExp = /getLiveGameChessboard\(e\){return(.*?)},/g;
+  const funRegExp = /function getChessboard\(e\){return(.*?)}function /g;
   const fun = playSource.match(funRegExp)?.shift();
 
   if (!fun) {
-    throw new Error("[CB] Failed to get the main function");
+    throw new Error("[CB] Failed to get getChessboard function");
+  }
+
+  const retRegExp = /return(.*?)]}/g;
+  const ret = fun.match(retRegExp)?.shift();
+
+  if (!ret) {
+    throw new Error("[CB] Failed to get the getChessboard return expression");
+  }
+
+  const expression = ret
+    .split("return")
+    .join("window.__bran_board =")
+    .split("]}")
+    .join("]; return window.__bran_board }");
+
+  return playSource.replace(funRegExp, fun.replace(retRegExp, expression));
+};
+
+const useClock = (playSource: string) => {
+  const funRegExp = /function getClock\(e\){return(.*?)}},/g;
+  const fun = playSource.match(funRegExp)?.shift();
+
+  if (!fun) {
+    throw new Error("[CB] Failed to get getClock function");
   }
 
   const retRegExp = /return(.*?)}}/g;
   const ret = fun.match(retRegExp)?.shift();
 
   if (!ret) {
-    throw new Error("[CB] Failed to get the return expression");
+    throw new Error("[CB] Failed to get the getClock return expression");
   }
 
   const expression = ret
     .split("return")
-    .join("window.__bran_board = ")
+    .join("window.__bran_clock =")
     .split("}}")
-    .join("; return window.__bran_board }}");
+    .join("; return window.__bran_clock }}");
 
   return playSource.replace(funRegExp, fun.replace(retRegExp, expression));
-};
-
-const useClock = (playSource: string) => {
-  const source = "function getClock(";
-  const payload = "window.__bran_get_clock=getClock;function getClock(";
-
-  return playSource.split(source).join(payload);
 };
 
 export const useHijackedClient = () => async (request: HTTPRequest) => {

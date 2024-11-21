@@ -2,7 +2,7 @@
 
 ⚠️ Deprecated
 
-***
+---
 
 Chess player for [https://www.chess.com/](https://www.chess.com/)  
 Powered by [Rodent-IV](http://www.pkoziol.cal24.pl/rodent/rodent.htm)
@@ -20,10 +20,6 @@ Powered by [Rodent-IV](http://www.pkoziol.cal24.pl/rodent/rodent.htm)
 - `npm install`
 - `npm run build`
 - `npm run start`
-
-## Known Behaviors
-
-- When a match starts and you're the white player, you need to do the first move manually
 
 ## License
 

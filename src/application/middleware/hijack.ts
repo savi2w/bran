@@ -28,30 +28,6 @@ const useBoard = (playSource: string) => {
   return playSource.replace(funRegExp, fun.replace(retRegExp, expression));
 };
 
-const useClock = (playSource: string) => {
-  const funRegExp = /function getClock\(e\){return(.*?)}},/g;
-  const fun = playSource.match(funRegExp)?.shift();
-
-  if (!fun) {
-    throw new Error("[CB] Failed to get getClock function");
-  }
-
-  const retRegExp = /return(.*?)}}/g;
-  const ret = fun.match(retRegExp)?.shift();
-
-  if (!ret) {
-    throw new Error("[CB] Failed to get the getClock return expression");
-  }
-
-  const expression = ret
-    .split("return")
-    .join("window.__bran_clock =")
-    .split("}}")
-    .join("; return window.__bran_clock }}");
-
-  return playSource.replace(funRegExp, fun.replace(retRegExp, expression));
-};
-
 export const useHijackedClient = () => async (request: HTTPRequest) => {
   const url = request.url();
 
@@ -60,7 +36,7 @@ export const useHijackedClient = () => async (request: HTTPRequest) => {
     const source = await response.text();
 
     return request.respond({
-      body: useClock(useBoard(source)),
+      body: useBoard(source),
       contentType: "application/javascript; charset=utf-8",
       status: 200,
     });

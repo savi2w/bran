@@ -20,7 +20,7 @@ const startClient = async () => {
 
   page.on("domcontentloaded", async () => {
     await page.addScriptTag({
-      path: require.resolve(path.join(__dirname, "inject", "listener.js")),
+      path: require.resolve(path.join(__dirname, "inject", "listener.3.js")),
     });
   });
 

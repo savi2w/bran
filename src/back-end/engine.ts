@@ -20,8 +20,11 @@ const getEnginePath = (): string => {
 const engine = new Engine(getEnginePath())
   .chain()
   .init()
-  .setoption("Personality", "Pedrita")
-  .setoption("Threads", os.cpus().length.toString());
+  .setoption("Personality", "Morphy")
+  .setoption("GuideBookFile", "guide/active.bin")
+  .setoption("MainBookFile", "rodent.bin")
+  .setoption("Threads", os.cpus().length.toString())
+  .setoption("UCI_Elo", "2150");
 
 export const getNextMove = async (
   depth: number,
